@@ -398,11 +398,31 @@ hr {
 
 /* My Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   color: #7b7984;
 }
 
+h5 {
+  color: #a19ea8;
+}
 
+.text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.ten {
+  margin: 0 auto;
+  text-align: center;
+}
+
+hr.divider {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+  max-width: 80%;
+}
 
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -488,12 +508,31 @@ header .nav ul li a:hover {
   padding-top: 20px;
 }
 
+/* Accomodations */
+#welcome h5 {
+  margin-top: 20px;
+}
+
 
 /* Accomodations */
 .img-circle {
   border-radius: 50%;
   width:140px;
   height:140px;
+  margin-bottom: 20px;
+}
+
+#accomodations .one-third {
+  margin-bottom: 30px;
+}
+
+#accomodations .one-third p {
+  margin-bottom: 0px;
+}
+
+h4 {
+  line-height: 1;
+  margin-bottom: 15px;
 }
 
 /* Map */
@@ -541,6 +580,17 @@ header .nav ul li a:hover {
   }
 }
 
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+#footer {
+  background-color: #cecece;
+  height: 75px;
+}
+
+#footer p {
+  margin-top: 25px;
+  color: #7b7984;
+}
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

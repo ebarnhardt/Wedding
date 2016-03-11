@@ -26,7 +26,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <!--Google Map-->
+    <!--Google Map
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAfHD8kf4Cu9cO3_u1SipOrssDIG48so48&sensor=false&extension=.js'></script> 
  
 <script> 
@@ -108,20 +108,153 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
  }
 }
 </script>
+-->
+
+<!-- Sticky
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/test.js"></script>
 
 </head>
 <body>
 
-  <!-- Primary Page Layout
+  <!-- Header
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div id="header">
   <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
+    <header class="twelve columns">
+        <div class="logo">
+         <a href="index.html"><img src="images/logo.png"/></a>
+        </div>
+       <div class="nav">
+          <ul>
+            <li class="selected"><a href="#">Welcome</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Accomodations</a></li>
+            <li><a href="#">Mountaintop</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Registry</a></li>
+         </ul>
       </div>
-    </div>
+    </header>
+    <!--<div id= "title">
+    <h1> Brooke + Jack </h1>
+    </div>-->
   </div>
+</div>
+  
+  <!-- Welcome
+    ================================================== -->
+
+<div id="welcome" class="container text">
+      <div class="twelve columns">
+          <h2>Welcome</h2>
+          <p class="lead">Thank you for visiting our wedding website! We put this site together so we can share our story, help our guests find accommodations and provide directions to the site of the ceremony and reception. We are so excited to be getting married and can’t wait to share the weekend with you.</p>
+        </div>
+      </div>
+
+  
+  <!-- Our Story
+    ================================================== -->
+
+<div class="container">
+  <div class="twelve columns">
+    <div class="image">
+    </div>
+    </div>
+</div>
+
+
+  <!-- Accomodations
+    ================================================== -->
+
+<div class="text container">
+      <div class="twelve columns">
+          <h2>Accomodations</h2>
+          <p class="lead">We have hotel rooms blocked off at the following hotels. Make a reservation by calling and referencing the "Barnhardt/Zunka wedding." Please book before July 1st to ensure a spot!</p>
+        </div>
+      </div>
+
+
+<div id="accomodations" class="container">
+      <div class="one-third column">
+            <img class="img-circle" src="images/hilton.jpg" alt="Hilton Garden Inn">
+            <h4><a href="http://hiltongardeninn3.hilton.com/en/hotels/virginia/hilton-garden-inn-charlottesville-CHOCHGI/index.html"> Hilton Garden Inn</a></h4>
+            <p>1793 Richmond Rd</p>
+            <p>7 mi from wedding</p>
+            <p>(434) 979-4442 </p>
+      </div>
+         <div class="one-third column">
+            <img class="img-circle" src="images/comfort.jpg" alt="Comfort Inn">
+            <h4><a href="https://www.choicehotels.com/virginia/charlottesville/comfort-inn-hotels/va382?source=gglocaloz">Comfort Inn</a></h4>
+            <p>2097 Inn Dr</p>
+            <p>7.7 mi from wedding site</p>
+            <p>(434) 977-3300 </p>
+            </div>
+
+         <div class="one-third column">
+          <img class="img-circle" src="images/english.jpg" alt="English Inn">
+          <h4><a href="http://www.englishinncharlottesville.com/">English Inn</a></h4>
+          <p>2000 Morton Dr</p>
+          <p>8.8 mi from wedding</p>
+          <p>(434) 971-9900</p>
+      
+        </div><!-- /.col-lg-4 -->
+         </div>
+      </div>
+
+  <!-- Map
+    ================================================== -->
+     <div class="container map">
+      <div class="row">
+        <div class="centered">
+          <div id='wedding'></div>
+        </div>
+      </div>
+     </div>
+
+
+  <!-- Location
+    ================================================== -->
+
+<div id="location" class="container text">
+      <div class="twelve columns">
+          <h2>Location</h2>
+          <p class="lead">Thank you for visiting our wedding website! We put this site together so we can share our story, help our guests find accommodations and provide directions to the site of the ceremony and reception. We are so excited to be getting married and can’t wait to share the weekend with you.</p>
+        </div>
+      </div>
+
+  <!-- Transportation
+    ================================================== -->
+
+<div id="transportation" class="container text">
+      <div class="twelve columns">
+          <h2>Transportation</h2>
+          <p class="lead">Thank you for visiting our wedding website! We put this site together so we can share our story, help our guests find accommodations and provide directions to the site of the ceremony and reception. We are so excited to be getting married and can’t wait to share the weekend with you.</p>
+        </div>
+      </div>
+
+  <!-- Registry
+    ================================================== -->
+
+<div id="registry" class="container text">
+    <div class="twelve columns">
+          <h2>Registry</h2>
+          <p class="lead">Coming Soon!</p>
+        </div>
+      </div>
+
+  <!-- Footer
+    ================================================== -->
+<div id="footer">
+    <div class="container">
+       <div class="twelve columns">
+            <p>&copy; 2016 Brooke + Jack</p>
+        </div>
+    </div>
+</div>
+
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

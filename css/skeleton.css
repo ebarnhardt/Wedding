@@ -659,10 +659,16 @@ h4 {
   }
 }
 
+/* Mountaintop*/
+#location one-third img {
+  width: 100%;
+}
+
+
 /* Map Detail*/
     #map-detail {
-        height:400px;
-        width:400px;
+        height:250px;
+        width:100%;
     }
     .gm-style-iw * {
         display: block;
@@ -675,6 +681,11 @@ h4 {
     .gm-style-iw a {
         color: #4272db;
     }
+
+.info {
+  float: right;
+}
+
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

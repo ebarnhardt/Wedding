@@ -492,6 +492,7 @@ header .nav ul li a:hover {
     left: 0;
     top: 0;
     z-index: 100000;
+    
 }
 
 .nav-scrolled {
@@ -508,13 +509,27 @@ header .nav ul li a:hover {
   padding-top: 20px;
 }
 
+/* About Us */
+#our-story {
+  margin-bottom: 30px;
+}
+
+.my-slider {
+  height: 400px;
+  min-width: 100%;
+}
+
+.unslider-nav ol {
+
+  }
+
+
 /* Accomodations */
+
 #welcome h5 {
   margin-top: 20px;
 }
 
-
-/* Accomodations */
 .img-circle {
   border-radius: 50%;
   width:140px;

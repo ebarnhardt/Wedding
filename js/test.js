@@ -14,7 +14,9 @@ $(function(){
     jQuery(document).ready(function($) {
       $('.my-slider').unslider({
 dots: true,
-arrows: true
+arrows: true,
+fluid: true,
+keys: true
 });
     });
 

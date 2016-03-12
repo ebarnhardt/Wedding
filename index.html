@@ -111,6 +111,123 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
 }
 </script>
 
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAfHD8kf4Cu9cO3_u1SipOrssDIG48so48&sensor=false&extension=.js'></script> 
+ 
+<script> 
+    google.maps.event.addDomListener(window, 'load', init);
+    var map;
+    function init() {
+        var mapOptions = {
+            center: new google.maps.LatLng(38.066033,-78.366669),
+            zoom: 13,
+            zoomControl: true,
+            zoomControlOptions: {
+                style: google.maps.ZoomControlStyle.DEFAULT,
+            },
+            disableDoubleClickZoom: true,
+            mapTypeControl: true,
+            mapTypeControlOptions: {
+                style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            },
+            scaleControl: true,
+            scrollwheel: true,
+            panControl: true,
+            streetViewControl: true,
+            draggable : true,
+            overviewMapControl: true,
+            overviewMapControlOptions: {
+                opened: false,
+            },
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}],
+        }
+        var mapElement = document.getElementById('map-detail');
+        var map = new google.maps.Map(mapElement, mapOptions);
+        var locations = [
+['Rt.20', 'undefined', 'undefined', 'undefined', 'undefined', 38.07541519999999, -78.4050272, 'https://mapbuildr.com/assets/img/markers/ellipse-green.png'],['Wedding', 'undefined', 'undefined', 'undefined', 'undefined', 38.059636, -78.352169, 'https://mapbuildr.com/assets/img/markers/ellipse-red.png']
+        ];
+        for (i = 0; i < locations.length; i++) {
+      if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+      if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+      if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+           if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+           if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+            marker = new google.maps.Marker({
+                icon: markericon,
+                position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+                map: map,
+                title: locations[i][0],
+                desc: description,
+                tel: telephone,
+                email: email,
+                web: web
+            });
+link = '';            bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+     }
+ function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+      var infoWindowVisible = (function () {
+              var currentlyVisible = false;
+              return function (visible) {
+                  if (visible !== undefined) {
+                      currentlyVisible = visible;
+                  }
+                  return currentlyVisible;
+               };
+           }());
+           iw = new google.maps.InfoWindow();
+           google.maps.event.addListener(marker, 'click', function() {
+               if (infoWindowVisible()) {
+                   iw.close();
+                   infoWindowVisible(false);
+               } else {
+                   var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4></div>";
+                   iw = new google.maps.InfoWindow({content:html});
+                   iw.open(map,marker);
+                   infoWindowVisible(true);
+               }
+        });
+        google.maps.event.addListener(iw, 'closeclick', function () {
+            infoWindowVisible(false);
+        });
+ }   var waypts = [];
+      directionsService = new google.maps.DirectionsService();
+      directionsDisplay = new google.maps.DirectionsRenderer({
+          suppressMarkers: true
+      });
+      if (locations.length > 1){
+          for (var i = 0; i < locations.length; i++) {
+              waypts.push({
+                  location:new google.maps.LatLng(locations[i][5], locations[i][6]),
+                  stopover:true
+              }); 
+          };
+          var request = {
+              origin: new google.maps.LatLng(locations[0][5], locations[0][6]),
+              destination: new google.maps.LatLng(locations[locations.length - 1][5], locations[locations.length - 1][6]),
+              waypoints: waypts,
+              optimizeWaypoints: true,
+              travelMode: google.maps.DirectionsTravelMode.DRIVING
+          };
+          directionsService.route(request, function(response, status) {
+              if (status == google.maps.DirectionsStatus.OK) {
+                  polylineOptions = {
+                      strokeColor: '#808080',
+                      strokeWeight: '2'
+                  }
+                  directionsDisplay.setOptions({
+                      polylineOptions: polylineOptions
+                  });
+                  directionsDisplay.setDirections(response);
+              }
+          });
+          directionsDisplay.setMap(map);
+       }
+   
+
+}
+</script>
+
+
 <!-- Js
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
  
@@ -177,53 +294,53 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
     <div class="my-slider">
 
         <ul>
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/frosh.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2004</h1>
-              <p>Jack and Brooke met on a road trip from Tennessee to Virginia during their freshman year of college. </p>
+              <p>Jack + Brooke (very fittingly) met on a road trip from their respective schools in TN to VA during their freshman year of college. </p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/waddison.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>June 2009</h1>
               <p>A year out of college, Jack and Brooke reunited at Brooke’s brother’s wedding in California.</p>
           </li>
           
-           <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+           <li style="background-image: url(images/story/2009.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>August 2009</h1>
               <p>They started dating long-distance Virginia to Oregon the next month.</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/roadtrip.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2010</h1>
               <p>Jack flew to Virginia to drive Brooke across country to live in Oregon permanently.</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/strawberry.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2011</h1>
-              <p>While Brooke and Jack continued to get outside on weekends, Jack defended a masters and started a Phd program in geology at OSU.</p>
+              <p>Jack defended a masters and started a Phd program in geology, serving as a great tour guide for Brooke around Oregon.</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/burners.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2012</h1>
-              <p>A year out of college, Jack and Brooke reunited at Brooke’s brother’s wedding in California.</p>
+              <p>Costumes became nearly a weekly ritual, especially at grad school parties.</p>
           </li>
 
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/tiputini.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2013</h1>
               <p>After Brooke earned her design degree, She and Jack took a 3-week trip to Ecuador and the Amazon rainforest.</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/arches.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2014</h1>
-              <p>Brooke and Jack drive across country again to move furniture and pianos to their new home in Portland.  The long-distance part of their relationship was finally over.</p>
+              <p>Brooke + Jack drove across country again with pianos in tow to their new home in Portland (long-distance was finally over)!</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/engaged.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2015</h1>
-              <p> Jack proposed after a long-distance trip to Arkansas.</p>
+              <p> Jack proposed after (yet another) cross-distance trip from his field site in Arkansas.</p>
           </li>
 
-          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+          <li style="background-image: url(images/story/marys.jpg); background-size: cover; width: 100%; overflow: hidden;">
                <h1>2016</h1>
               <p>Jack and Brooke start a new chapter in Corvallis.</p>
           </li>
@@ -289,11 +406,19 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
     ================================================== -->
      <hr class="divider">
 
-<div id="location" class="container text">
+    <div id="location" class="container text">
       <div class="twelve columns">
           <h2>The Mountaintop</h2>
-          <p class="lead">The ceremony and reception will take place a long 3 miles up the road from "The Barn" where Brooke's parents live. Follow Lonesome Mountain Road to the end of the pavement and then continue up the gravel to the very top. Veer left towards "The Mountaintop" when you see the cabin (which has the closest navigable address - 3950 Lonesome Mountaintop Rd)</p>
+          <p class="lead">The ceremony and reception will take place a long 3 miles up the road from "The Barn" where Brooke's parents live. Follow Lonesome Mountain Road to the end of the pavement and then continue up the gravel to the very top. Veer left towards "The Mountaintop" when you see Broadhead Cottage (which has the closest navigable address - 3950 Lonesome Mountaintop Rd)</p>
         </div>
+
+      <div id="map-detail" class="one-third map">
+      <div class="row">
+        <div class="centered">
+          <div id='wedding2'></div>
+        </div>
+      </div>
+     </div> 
       </div>
 
   <!-- Transportation

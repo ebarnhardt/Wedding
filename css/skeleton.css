@@ -550,6 +550,7 @@ header .nav ul li a:hover {
   text-align: center;
   color: #FFF;
   padding: 265px 5px 5px 5px;
+  font-weight: 600;
 }
 
 .dots {
@@ -658,6 +659,23 @@ h4 {
   }
 }
 
+/* Map Detail*/
+    #map-detail {
+        height:400px;
+        width:400px;
+    }
+    .gm-style-iw * {
+        display: block;
+        width: 100%;
+    }
+    .gm-style-iw h4, .gm-style-iw p {
+        margin: 0;
+        padding: 0;
+    }
+    .gm-style-iw a {
+        color: #4272db;
+    }
+
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 #footer {
@@ -701,7 +719,12 @@ there.
 @media (min-width: 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+  .my-slider li{
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
 
 /* Larger than tablet */
 @media (min-width: 750px) {}

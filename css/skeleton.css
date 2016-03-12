@@ -545,6 +545,11 @@ header .nav ul li a:hover {
   color: #FFF;
 }
 
+.my-slider h1.title {
+margin-top: 120px;
+}
+
+
 .my-slider p {
   line-height: 1.2;
   text-align: center;
@@ -723,6 +728,10 @@ there.
   .logo img {
     width: 99%;
   }
+
+  .my-slider h1.title img {
+  max-width: 80%;
+}
 }
 
 

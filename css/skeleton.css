@@ -527,7 +527,7 @@ header .nav ul li a:hover {
 
 /* About Us */
 #our-story {
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }
 
 .my-slider {
@@ -550,12 +550,11 @@ header .nav ul li a:hover {
 margin-top: 120px;
 }
 
-
 .my-slider p {
   line-height: 1.2;
   text-align: center;
   color: #FFF;
-  padding: 250px 5px 5px 5px;
+  padding: 240px 5px 5px 5px;
   font-weight: 600;
 }
 
@@ -566,9 +565,6 @@ margin-top: 120px;
     bottom: 5px;
 }
 
-.unslider-nav ol li {
-  background-color: red;
-}
 .dots li {
     display: inline-block;
     width: 10px;
@@ -578,7 +574,7 @@ margin-top: 120px;
     border-radius: 6px;
 
     cursor: pointer;
-    opacity: .4;
+    opacity: .1;
 
     -webkit-transition: background .5s, opacity .5s;
     -moz-transition: background .5s, opacity .5s;
@@ -586,12 +582,13 @@ margin-top: 120px;
 }
 .dots li.active {
     background: #FFF;
-    opacity: 1;
+    opacity: .1;
 }
 
-/* Arrows 
+/* Arrows*/ 
 .unslider-arrow {
-  color: transparent;
+  display: hidden;
+  color: #fff;
   text-decoration: none;
   background: rgba(255,255,255,0.1);
   padding: 0 25px 5px 25px;
@@ -601,25 +598,13 @@ margin-top: 120px;
   position: absolute;
   top: 65%;
   right: 0; 
-  background: url(../images/story/arrow-r.png) no-repeat center center; 
 }
 
 .prev {
   position: absolute;
   top: 65%;
   left: 0;
-  background-image: url(../images/story/arrow-l.png);
-  background-repeat: none; 
 }
-
-.prev:hover {
-  display: none;
-}
-
-.next:hover {
-  display: none;
-}
-*/
 
 
 /* Accomodations */
@@ -766,6 +751,14 @@ there.
   .my-slider h1.title img {
   max-width: 80%;
 }
+}
+
+/* Fix Our Story Images*/
+@media (max-width: 930px) {
+  #our-story ul li {
+    background-position: 50%;
+  }
+
 }
 
 

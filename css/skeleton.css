@@ -424,6 +424,7 @@ hr.divider {
   max-width: 80%;
 }
 
+
 /* Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 div#header {
@@ -486,7 +487,7 @@ header .nav ul li a {
 }
 
 header .nav ul li a:hover {
-  color: #000;
+  font-weight: 700;
 }
 
 .nav {
@@ -518,6 +519,12 @@ header .nav ul li a:hover {
   box-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 
+#header .nav a:focus {
+    position: static;
+    outline: 0 none;
+    top: 0;
+}
+
 /* About Us */
 #our-story {
   margin-bottom: 30px;
@@ -528,9 +535,51 @@ header .nav ul li a:hover {
   min-width: 100%;
 }
 
-.unslider-nav ol {
+.my-slider li{
+  height: 400px;
+  overflow: hidden;
+}
 
-  }
+.my-slider h1 {
+  text-align: center;
+  color: #FFF;
+}
+
+.my-slider p {
+  line-height: 1.2;
+  text-align: center;
+  color: #FFF;
+  padding: 265px 5px 5px 5px;
+}
+
+.dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+
+    text-indent: -999em;
+    border-radius: 6px;
+
+    cursor: pointer;
+    opacity: .4;
+
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+.dots li.active {
+    background: #000;
+    opacity: 1;
+}
+
 
 
 /* Accomodations */
@@ -616,9 +665,19 @@ h4 {
   height: 75px;
 }
 
+#footer .twelve {
+  margin-top: 15px;
+}
+
 #footer p {
-  margin-top: 25px;
+  margin-bottom: 0px;
   color: #7b7984;
+}
+
+#footer .small {
+  color: #fff;
+  font-style: italic;
+  font-size: 12px;
 }
 
 /* Media Queries

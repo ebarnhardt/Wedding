@@ -48,7 +48,7 @@
                 style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
             },
             scaleControl: true,
-            scrollwheel: true,
+            scrollwheel: false,
             panControl: true,
             streetViewControl: true,
             draggable : true,
@@ -98,7 +98,7 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
                    iw.close();
                    infoWindowVisible(false);
                } else {
-                   var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+desc+"<p></div>";
+                   var html= "<div style='color:#000;background-color:#fff;padding-bottom:0px;width:150px;line-height:1;'><h5>"+title+"</h5><p>"+desc+"<p></div>";
                    iw = new google.maps.InfoWindow({content:html});
                    iw.open(map,marker);
                    infoWindowVisible(true);
@@ -143,12 +143,12 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
       
        <div class="nav">
           <ul>
-            <li><a href="#our-story">Our Story</a></li>
-            <li><a href="#accomodations">Accomodations</a></li>
-            <li><a href="#map">Location</a></li>
-            <li><a href="#location">Mountaintop</a></li>
-            <li><a href="#transportation">Transportation</a></li>
-            <li><a href="#registry">Registry</a></li>
+            <li><a href="#welcome">Our Story</a></li>
+            <li><a href="#our-story">Accomodations</a></li>
+            <li><a href="#accomodations">Map</a></li>
+            <li><a href="#map">Mountaintop</a></li>
+            <li><a href="#location">Transportation</a></li>
+            <li><a href="#transportation">Registry</a></li>
          </ul>
       </div>
     </header>
@@ -177,9 +177,57 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
     <div class="my-slider">
 
         <ul>
-          <li><img src="images/kiwanda.jpg"/></li>
-          <li><img src="images/everydaypeople.jpg"/></li>
-          <li><img src="images/everydaypeople2.jpg"/></li>
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2004</h1>
+              <p>Jack and Brooke met on a road trip from Tennessee to Virginia during their freshman year of college. </p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>June 2009</h1>
+              <p>A year out of college, Jack and Brooke reunited at Brooke’s brother’s wedding in California.</p>
+          </li>
+          
+           <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>August 2009</h1>
+              <p>They started dating long-distance Virginia to Oregon the next month.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2010</h1>
+              <p>Jack flew to Virginia to drive Brooke across country to live in Oregon permanently.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2011</h1>
+              <p>While Brooke and Jack continued to get outside on weekends, Jack defended a masters and started a Phd program in geology at OSU.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2012</h1>
+              <p>A year out of college, Jack and Brooke reunited at Brooke’s brother’s wedding in California.</p>
+          </li>
+
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2013</h1>
+              <p>After Brooke earned her design degree, She and Jack took a 3-week trip to Ecuador and the Amazon rainforest.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2014</h1>
+              <p>Brooke and Jack drive across country again to move furniture and pianos to their new home in Portland.  The long-distance part of their relationship was finally over.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2015</h1>
+              <p> Jack proposed after a long-distance trip to Arkansas.</p>
+          </li>
+
+          <li style="background-image: url(images/story/claremont.jpg); background-size: cover; width: 100%; overflow: hidden;">
+               <h1>2016</h1>
+              <p>Jack and Brooke start a new chapter in Corvallis.</p>
+          </li>
+
         </ul>
     </div>
   </div>
@@ -226,6 +274,8 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
 
   <!-- Map
     ================================================== -->
+         <hr class="divider">
+
      <div id="map" class="container map">
       <div class="row">
         <div class="centered">
@@ -235,13 +285,14 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
      </div>
 
 
-  <!-- Location
+  <!-- Mountaintop
     ================================================== -->
+     <hr class="divider">
 
 <div id="location" class="container text">
       <div class="twelve columns">
-          <h2>Location</h2>
-          <p class="lead">Thank you for visiting our wedding website! We put this site together so we can share our story, help our guests find accommodations and provide directions to the site of the ceremony and reception. We are so excited to be getting married and can’t wait to share the weekend with you.</p>
+          <h2>The Mountaintop</h2>
+          <p class="lead">The ceremony and reception will take place a long 3 miles up the road from "The Barn" where Brooke's parents live. Follow Lonesome Mountain Road to the end of the pavement and then continue up the gravel to the very top. Veer left towards "The Mountaintop" when you see the cabin (which has the closest navigable address - 3950 Lonesome Mountaintop Rd)</p>
         </div>
       </div>
 
@@ -274,6 +325,7 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
     <div class="container">
        <div class="twelve columns">
             <p>&copy; 2016 The Zunkas</p>
+            <p class="small"> Built by Brooke</p>
         </div>
     </div>
 </div>

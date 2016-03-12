@@ -28,7 +28,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <!--Google Map
+    <!--Google Map-->
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAfHD8kf4Cu9cO3_u1SipOrssDIG48so48&sensor=false&extension=.js'></script> 
  
 <script> 
@@ -110,7 +110,6 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
  }
 }
 </script>
--->
 
 <!-- Js
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -141,14 +140,15 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
         <div class="logo">
          <a href="index.html"><img src="images/logo.png"/></a>
         </div>
+      
        <div class="nav">
           <ul>
-            <li class="selected"><a href="#">Welcome</a></li>
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Accomodations</a></li>
-            <li><a href="#">Mountaintop</a></li>
-            <li><a href="#">Transportation</a></li>
-            <li><a href="#">Registry</a></li>
+            <li><a href="#our-story">Our Story</a></li>
+            <li><a href="#accomodations">Accomodations</a></li>
+            <li><a href="#map">Location</a></li>
+            <li><a href="#location">Mountaintop</a></li>
+            <li><a href="#transportation">Transportation</a></li>
+            <li><a href="#registry">Registry</a></li>
          </ul>
       </div>
     </header>
@@ -226,7 +226,7 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
 
   <!-- Map
     ================================================== -->
-     <div class="container map">
+     <div id="map" class="container map">
       <div class="row">
         <div class="centered">
           <div id='wedding'></div>
@@ -237,7 +237,6 @@ link = '';            bindInfoWindow(marker, map, locations[i][0], description, 
 
   <!-- Location
     ================================================== -->
- <hr class="divider">
 
 <div id="location" class="container text">
       <div class="twelve columns">

@@ -408,7 +408,7 @@ h5 {
 
 .text {
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .ten {
@@ -428,20 +428,30 @@ hr.divider {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 div#header {
   background-color: #b2ceb8;
-  background-image: url('../images/everydaypeople.jpg');
   background-size: cover;
   background-position: center center;
   margin: 0;
-  min-height: 700px;
+  min-height: 600px;
   width: 100%;
+  position: relative;
 }
 
 header {
   margin-top: 20px;
+  padding-top: 600px;
+  width: 100%;
+}
+
+.logo {
+  padding-top: 0;
+position: absolute;
+top:0;
 }
 
 .logo img{
   margin: 0 auto;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 header h1 {
@@ -449,17 +459,13 @@ header h1 {
   display: inline;
 }
 
-header .nav {
- /* display: inline;
-  margin: 0 auto;
-  text-align: center;*/
-}
-
 header .nav ul {
   list-style-type: none;
   text-align: center;
   padding-left: 5px;
   padding-right: 5px;
+  padding-top: 10px;
+  width: 100%;
 }
 
 header .nav ul li{
@@ -486,13 +492,15 @@ header .nav ul li a:hover {
 .nav {
   margin-top: 20px;
   width: 100%;
-  z-index: 1000000;
-  height: 50px;
-  position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100000;
-    
+  bottom: 0;
+  height: 60px;
+  position: absolute;
+  z-index: 150;
+  padding-top: 10px;
+  background-color: #b2ceb8;
+  background-size: cover;
+  clear: both;
+
 }
 
 .nav-scrolled {
@@ -506,7 +514,8 @@ header .nav ul li a:hover {
   z-index: 100;
   background-color: #b2ceb8;;
   margin-top: 0px;
-  padding-top: 20px;
+  padding-top: 10px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.4);
 }
 
 /* About Us */
@@ -535,6 +544,7 @@ header .nav ul li a:hover {
   width:140px;
   height:140px;
   margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 #accomodations .one-third {
@@ -551,6 +561,10 @@ h4 {
 }
 
 /* Map */
+#map {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 
     #wedding {
         height:400px;
@@ -615,6 +629,13 @@ near the relevant code. For example, if you wanted to change the styles for butt
 on small devices, paste the mobile query code up in the buttons section and style it
 there.
 */
+
+/* Fix logo */
+@media (max-width: 1100px) {
+  .logo img {
+    width: 99%;
+  }
+}
 
 
 /* Larger than mobile */

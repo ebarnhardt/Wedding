@@ -406,6 +406,11 @@ h5 {
   color: #a19ea8;
 }
 
+#map h6 {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
 .text {
   margin-top: 30px;
   margin-bottom: 50px;
@@ -432,14 +437,14 @@ div#header {
   background-size: cover;
   background-position: center center;
   margin: 0;
-  min-height: 600px;
+  min-height: 250px;
   width: 100%;
   position: relative;
 }
 
 header {
   margin-top: 20px;
-  padding-top: 600px;
+  padding-top: 210px;
   width: 100%;
 }
 
@@ -475,11 +480,6 @@ header .nav ul li{
   margin: 0 auto;
 }
 
-header .nav ul li.selected {
-font-weight: 700;
-/*border-bottom: 4px solid #FFF;*/
-padding-bottom: 10px;
-}
 
 header .nav ul li a {
   color: #FFF;
@@ -498,7 +498,7 @@ header .nav ul li a:hover {
   position: absolute;
   z-index: 150;
   padding-top: 10px;
-  background-color: #b2ceb8;
+  background-color: transparent;
   background-size: cover;
   clear: both;
 
@@ -688,6 +688,15 @@ h4 {
   width: 100%;
 }
 
+/*
+#location .img-circle {
+  border-radius: 50%;
+  width:250px;
+  height:250px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+*/
 
 /* Map Detail*/
     #map-detail {
@@ -745,12 +754,29 @@ there.
 /* Fix logo */
 @media (max-width: 1100px) {
   .logo img {
-    width: 99%;
+    width: 100%;
   }
 
   .my-slider h1.title img {
   max-width: 80%;
 }
+}
+
+/* Hide nav at small sizes */
+@media (max-width: 682px) {
+  #header .nav {
+    display: none;
+}
+  #header {
+    min-height: 100px !important; 
+    height: 120px;
+    padding: 0;
+  }
+  .logo {
+    padding-top: 2%;
+  }
+
+
 }
 
 /* Fix Our Story Images*/

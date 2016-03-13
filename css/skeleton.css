@@ -784,9 +784,16 @@ there.
   #our-story ul li {
     background-position: 50%;
   }
-
 }
 
+/* Fix Accomodations IMages*/
+@media (min-width: 550px) {
+#accomodations img {
+  max-width:100%;
+  max-height: 100%;
+  }
+}
+}
 
 /* Larger than mobile */
 @media (min-width: 400px) {}

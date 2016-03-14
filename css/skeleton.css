@@ -763,21 +763,18 @@ there.
 }
 
 /* Hide nav at small sizes */
-@media (max-width: 682px) {
-  #header .nav {
-    display: none;
-}
-  #header {
-    min-height: 100px !important; 
-    height: 120px;
-    padding: 0;
-  }
+@media (max-width: 500px) {
   .logo {
-    padding-top: 2%;
+    padding-top: 10% !important;
   }
-
-
 }
+
+@media (max-width: 682px) {
+  .logo {
+    padding-top: 5%;
+  }
+}
+
 
 /* Fix Our Story Images*/
 @media (max-width: 930px) {

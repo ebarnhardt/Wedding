@@ -594,17 +594,6 @@ margin-top: 120px;
   padding: 0 25px 5px 25px;
 }
 
-.next {
-  position: absolute;
-  top: 65%;
-  right: 0; 
-}
-
-.prev {
-  position: absolute;
-  top: 65%;
-  left: 0;
-}
 
 
 /* Accomodations */
